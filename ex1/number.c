@@ -2,10 +2,10 @@
 
 void numberGet(FILE *fpt,float* c){
 	char readLine[20];
-	char check[2] = ".";
+	char check[] = ".";
 	while(fgets(readLine,256,fpt)!=NULL){
 		if(strstr(readLine,check)!=NULL){
-			*c = atof(readLine);
+			*c = (float)atof(readLine);
 			break;
 		}
 	}
