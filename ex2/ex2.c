@@ -12,11 +12,11 @@ int main(int argc,char* argv[]){
 
 	if(NULL==(fpt=fopen(argv[2],"r"))){
 		fpt = fopen(argv[2],"w");
-		yamlPut(fpt,0,&ana,0,0);
+		yamlPut(fpt,&ana);
 	}else{
 		fpt = fopen(argv[2],"a");
-		yamlPut(fpt,0,&ana,0,0);
+		yamlPut(fpt,&ana);
 	}
-	
+
 	return 0;
 }
