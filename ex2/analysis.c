@@ -44,6 +44,6 @@ void yamlPut(FILE *fpt,void* value){
 	//se
 	se = sd/pow(num,(1/2));
 
-	fprintf(fpt," mean: %f¥n sd: %f¥n se: %f¥n skewness: %f¥n kurtosis: %f",mean,sd,se,skewness,kurtosis);
+	fprintf(fpt,"mean: %f \nsd: %f \nse: %f \nskewness: %f \nkurtosis: %f",mean,sd,se,skewness,kurtosis);
 	fclose(fpt);
 }
