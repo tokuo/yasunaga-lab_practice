@@ -30,7 +30,7 @@ void yamlPut(FILE *fpt,void* value){
 		current = current->nextValue;
 	}
 	mean /= num;
-	//sd,skewness,kurtosis　　ここちょっとおかしい
+	//sd,skewness,kurtosis
 	current = value;
 	while(current->nextValue != NULL){
 		sd += pow((current->value - mean),2);
@@ -38,7 +38,7 @@ void yamlPut(FILE *fpt,void* value){
 		kurtosis += pow((current->value),4);
 		current = current->nextValue;
 	}
-	sd = pow((sd/num),(1/2));
+	sd = sqrt(sd/num);
 	skewness = skewness/(num * pow(sd,3));
 	kurtosis = kurtosis/(num * pow(sd,4));
 	//se
