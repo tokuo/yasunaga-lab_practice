@@ -10,6 +10,6 @@ int main(int argc,char* argv[]){
 	}
     check(fpt,ans);
     
-    printf("真:%f\t偽:%f\n",ans[0],ans[1]);
+    printf("真:%f\t偽:%f\n",ans[1],ans[0]);
     return 0;
 }

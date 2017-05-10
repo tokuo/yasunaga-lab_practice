@@ -17,7 +17,7 @@ run:
 	./ex6 no1.txt
 
 clean:
-	rm -rf *.o *.a ex4
+	rm -rf *.o *.a ex6
 
 depend: $(SOURCE)
 	gcc -M *.c > dependency
