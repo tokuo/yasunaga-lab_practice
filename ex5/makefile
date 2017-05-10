@@ -17,7 +17,7 @@ run:
 	./ex5 no1.txt no2.txt 3
 
 clean:
-	rm -rf *.o *.a ex4
+	rm -rf *.o *.a ex5
 
 depend: $(SOURCE)
 	gcc -M *.c > dependency

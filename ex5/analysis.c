@@ -29,6 +29,7 @@ void maingre(void* list,void* avelists){
 	mat[2][0] = mat[0][2];
 	mat[2][1] = mat[1][2];
 	mat[2][2] /= avelist->numP;
+	//以下、固有値固有ベクトルの算出
 }
 
 void deviation(void* list){
