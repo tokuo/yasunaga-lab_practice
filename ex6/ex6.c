@@ -2,7 +2,7 @@
 
 int main(int argc,char* argv[]){
     FILE* fpt;
-    double ans[2] = {1/2,1/2};//偽、真の順
+    double ans[] = {0.5,0.5};//偽、真の順
     
 	if(NULL==(fpt=fopen(argv[1],"r"))){
 		printf("fopen error1!\n");
