@@ -3,7 +3,8 @@
 void maingre(void* list,void* avelists){
 	stock* current = list;
 	AVE* avelist = avelists;
-	double mat[3][3];
+	double mat[3][3],q[3][3],r[3][3],swap=0,a[3][3];
+	int i,j,k;
 	while(current->nextValue != NULL){
 		mat[0][0] += pow((current->ana - avelist->ana),2);
 		mat[0][1] += (current->ana - avelist->ana)*(current->ana - avelist->vec);
@@ -29,7 +30,25 @@ void maingre(void* list,void* avelists){
 	mat[2][0] = mat[0][2];
 	mat[2][1] = mat[1][2];
 	mat[2][2] /= avelist->numP;
-	//以下、固有値固有ベクトルの算出
+	//以下、固有値固有ベクトルの算�
+	for(i=0;i<3;i++){
+		for(j=0;j<3;j++){
+			swap += pow(mat[j][i],2);
+		}
+		swap = sqrt(swap);
+		for(j=0;j<3;j++){
+			q[j][i] = mat[j][i]/swap;
+		}
+	}
+	for(i=0;i<3;i++){
+		for(j=0;j<3;j++){
+			r[i][j] = 0;
+			for(k=0;k<3;k++){
+				r[i][j] += q[k][i]*mat[k][j];
+			}
+		}
+	}
+	//QR algorithm http://marupeke296.com/oxmath_no3_eigenvalues.html
 }
 
 void deviation(void* list){
